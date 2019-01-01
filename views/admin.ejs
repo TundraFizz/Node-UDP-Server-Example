@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fizz Club</title>
+  <meta property="og:title"       content="Fizz Mains Club">
+  <meta property="og:description" content="🐟 🐟 🐟">
+  <meta property="og:image"       content="/img/icon.png">
+  <!-- <link rel="shortcut icon"       href="/img/icon.png"> -->
+  <link rel="stylesheet"          href="/css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  <script src="/js/jquery-ui.min.js"></script>
+  <script src="/js/jquery-animate-shadow-min.js"></script>
+  <script src="/js/jsc.js"></script>
+  <script src="/js/admin.js"></script>
+</head>
+<body>
+  <div class="container-flex">
+    <div class="button glow" onclick="UpdateAccounts()">Update all accounts</div>
+  </div>
+
+  <div>
+    <pre><%- JSON.stringify(a, null, 2) %></pre>
+  </div>
+</body>
+</html>
