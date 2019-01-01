@@ -1,5 +1,6 @@
 var app = require("../main.js");
-var db  = require("../main.js").db;
+var db  = app.db;
+var io  = app.io;
 var fs  = require("fs"); // File system library
 
 app.post("/add-person", function(req, res){
@@ -29,10 +30,11 @@ var server = require("dgram").createSocket("udp4").bind(9000);
 
 server.on("message", (message) => {
   var data = JSON.parse(message.toString("utf-8"));
+  io.emit("testing", data);
   console.log(`${data.name}: ${data.msg}`);
 
   var packet = JSON.stringify(data);
-  var message = new Buffer(packet);
+  var message = Buffer.from(packet);
   server.send(message, 0, message.length, 9001, "localhost");
   server.send(message, 0, message.length, 9002, "localhost");
 });

@@ -30,5 +30,5 @@ module.exports.db   = mysql.createPool({
   "database"       : data["mysql"][mode]["database"],
   "connectionLimit": 20
 }).promise();
+module.exports.io = require("socket.io")(app.listen(80));
 require("./node/routes.js");
-app.listen(80);
